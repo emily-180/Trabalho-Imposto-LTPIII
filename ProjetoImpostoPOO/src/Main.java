@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        Calculate calculo = new Calculate();
         List<Tax> model1 = new ArrayList<>();
         model1.add(new ICMS());
         model1.add(new Confins());
@@ -35,7 +36,7 @@ public class Main {
         System.out.println("****PREÇO FINAL DOS PRODUTOS****");
         System.out.println("");
         for (Product product : products) {
-            double finalPrince = product.salePrice();
+            double finalPrince = calculo.salePrice(product);
             System.out.printf("%s --> R$%.2f%n", product.getNameProduct(), finalPrince);
         }
     } 

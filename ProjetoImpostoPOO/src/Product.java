@@ -16,16 +16,18 @@ public class Product {
     public String getNameProduct() {
         return nameProduct;
     }
-    
-    public double sumTaxes() {
-        double totalTax = 0;
-        for (Tax tax : taxes) {
-            totalTax += costPrice * tax.getNumber();
-        }
-        return totalTax;
-    }
 
-    public double salePrice() {
-        return costPrice + sumTaxes() + (costPrice * profitMargin);
-    }
+	public double getCostPrice() {
+		return costPrice;
+	}
+
+	public List<Tax> getTaxes() {
+		return taxes;
+	}
+
+	public double getProfitMargin() {
+		return profitMargin;
+	}
+    
+    
 }
