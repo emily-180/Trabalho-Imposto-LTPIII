@@ -1,6 +1,8 @@
 public class Calculate {
     public double salePrice(Product product) {
-        return product.getCostPrice() + sumTaxes(product) + (product.getCostPrice() * product.getProfitMargin());
+        double sum = product.getCostPrice() + sumTaxes(product);
+        double lucro = (sum * product.getProfitMargin());
+        return lucro+ sum;
     }
 
     public double sumTaxes(Product product) {

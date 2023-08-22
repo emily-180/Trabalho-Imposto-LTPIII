@@ -27,17 +27,24 @@ public class Main {
         
         List<Product> products = new ArrayList<>();
         products.add(new Product("Arroz", 7.00, model1, 0.20));
-        products.add(new Product("FeijÃ£o",7.00, model1, 0.25));
+        products.add(new Product("Feijão",7.00, model1, 0.25));
         products.add(new Product("Carne",7.00, model2, 0.35));
         products.add(new Product("Cerveja",7.00, model3, 0.30));
-        products.add(new Product("GÃ¡s",7.00, model2, 0.15));
+        products.add(new Product("Gás",7.00, model2, 0.15));
         products.add(new Product("Gasolina",7.00, model4, 0.15));
         
-        System.out.println("****PREÃ‡O FINAL DOS PRODUTOS****");
+        System.out.println("****PREÇO FINAL DOS PRODUTOS****");
         System.out.println("");
         for (Product product : products) {
             double finalPrince = calculo.salePrice(product);
             System.out.printf("%s --> R$%.2f%n", product.getNameProduct(), finalPrince);
+            
+            List<Tax> productTaxes = product.getTaxes();
+            for (Tax tax : productTaxes) {
+                System.out.printf("Imposto: %s, ", tax.getName());
+            }
+            System.out.println("\n");  
+            
         }
     } 
 }
